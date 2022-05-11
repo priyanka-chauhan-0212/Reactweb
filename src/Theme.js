@@ -19,8 +19,6 @@ function Theme() {
   function toggleTheme() {
     setCTh(cth === "6" ? "5" : "6");
     setTheme(cth === "6" ? themes.dark : themes.light);
-
-    document.getElementById("body").style.background = theme.background;
   }
   return (
     <div className="App">
@@ -28,9 +26,7 @@ function Theme() {
         <button
           style={{ background: theme.background }}
           onClick={() => toggleTheme()}
-        >
-          Change theme Switch to {cth === "6" ? "Light" : "Dark"} mode
-        </button>
+        ></button>
       </ThemeContext.Provider>
     </div>
   );
