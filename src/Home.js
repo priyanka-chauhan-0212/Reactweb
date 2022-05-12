@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 
-export default function Home() {
+export default function Home({ theme }) {
+  const [th, setTh] = useState(theme);
+  function changeTheme(theme) {
+    setTh(theme);
+  }
   return (
     <div class="container">
       <div class="row p-2">
@@ -14,7 +18,11 @@ export default function Home() {
                 With supporting text below as a natural lead-in to additional
                 content.
               </p>
-              <a href="#" class="btn btn-purple">
+              <a
+                href="#"
+                onClick={() => changeTheme("purple")}
+                className={`btn btn-${th}`}
+              >
                 Purple
               </a>
             </div>
@@ -29,7 +37,11 @@ export default function Home() {
                 With supporting text below as a natural lead-in to additional
                 content.
               </p>
-              <a href="#" class="btn btn-red">
+              <a
+                href="#"
+                onClick={() => changeTheme("red")}
+                className={`btn btn-${th}`}
+              >
                 Red
               </a>
             </div>
@@ -44,7 +56,7 @@ export default function Home() {
                 With supporting text below as a natural lead-in to additional
                 content.
               </p>
-              <a href="#" class="btn btn-blue">
+              <a href="#" className={`btn btn-${th}`}>
                 Blue
               </a>
             </div>
@@ -66,7 +78,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row p-2">
         <div class="col-3">
           <div class="card bg-dark">
             <div class="card-header">Featured</div>

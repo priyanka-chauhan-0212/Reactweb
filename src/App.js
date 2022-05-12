@@ -1,9 +1,12 @@
 import "./styles.css";
 import Home from "./Home.js";
-export default function App() {
+import { useState } from "react";
+export default function App({ theme }) {
+  const [th, setTh] = useState(theme);
+
   return (
     <div className="App">
-      <Home />
+      <Home theme={th} />
     </div>
   );
 }
